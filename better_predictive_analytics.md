@@ -166,6 +166,8 @@ Dataset ini secara manual dikumpulkan dari observasi. Dataset ini terdiri dari 7
     -   Pada fitur Kekeruhan, persentase 0 ialah 67.3% dan 1 ialah 32.7% (jumlah nilai 0 > 1)
        
   - Fitur Numerik
+
+    ![6](https://user-images.githubusercontent.com/40670734/191147807-a99abc50-9496-4524-b2e7-0baed27f090a.png)
   
     Distribusi pada fitur pH dan Warna terlihat memiliki dominasi di beberapa daerah saja, sedangkan pada fitur Suhu terdapat pola 'right-side'.
     
@@ -176,10 +178,22 @@ Dataset ini secara manual dikumpulkan dari observasi. Dataset ini terdiri dari 7
     - Penjelasan : Encoding merupakan proses merubah nilai teks pada fitur target menjadi angka agar lebih mudah dimengerti komputer dan memudahkan univariate analysis.
     
   - Fitur Kategorik
+
+    Distribusi antara fitur kategorik dengan fitur target dataset :
+  
+    ![7](https://user-images.githubusercontent.com/40670734/191147889-c05a9f5c-677f-4723-8e86-6aec984783eb.png)
   
     Terlihat bahwa mayoritas nilai pada fitur kategorik berada pada kadar kualitas susu yang medium dan high.
    
   - Fitur Numerik
+
+    Distribusi antara fitur numerik dengan fitur target dataset :
+    
+    ![8](https://user-images.githubusercontent.com/40670734/191148142-692b67f9-4e38-4547-ae4e-5a9d96e044e0.png)
+    
+    Tidak banyak yang dapat disimpulkan dari visualisasi diatas.
+    
+    ![9](https://user-images.githubusercontent.com/40670734/191148365-24267beb-915e-489e-9506-51f318f886e9.png)
   
     Terlihat bahwa korelasi fitur - fitur dalam dataset terhadap fitur Kadar Kualitas cukup terlihat dengan rincian :
     
@@ -450,6 +464,8 @@ Validation Score: 0.9923076923076923
 |        accuracy       |           |        |     0.99 |     130 |
 |       macro avg       |      1.00 |   0.99 |     0.99 |     130 |
 |      weighted avg     |      0.99 |   0.99 |     0.99 |     130 |
+    
+![10](https://user-images.githubusercontent.com/40670734/191148598-77413533-2c25-4017-a9fc-1e4599e42082.png)
     
 </div>
 
