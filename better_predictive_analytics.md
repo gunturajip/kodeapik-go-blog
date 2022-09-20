@@ -450,7 +450,7 @@ Pada tahap evaluasi ini, kita menggunakan fungsi classification_report dan confu
 
   - Cara Kerja : Metrik ini bekerja dengan menghitung jumlah prediksi di setiap label secara tepat kemudian dibagi dengan jumlah total prediksi yang dilakukan.
 
-Berikut model terbaik beserta nilai akurasi pada tahap latihan dan validasi saat proses Hyperparameter Tuning :
+Berikut model terbaik beserta nilai akurasi pada tahap latihan dan validasi dari proses Hyperparameter Tuning :
 ```
 {'classifier': GradientBoostingClassifier(max_depth=5, random_state=123), 'classifier__max_depth': 5, 'classifier__n_estimators': 100}
 1.0
@@ -489,16 +489,14 @@ Referensi :
 
 [1]   M. Frizzarin, I.C. Gormley, D.P. Berry, T.B. Murphy, A. Casa, A. Lynch, and S. McParland, "Predicting cow milk quality traits from routinely available milk spectra using statistical machine learning methods", _Journal of Dairy Science_, vol. 104, no. 7, pp. 7438-7447, 2021.
 
-[2]   https://www.kaggle.com/datasets/cpluzshrijayan/milkquality
+[2]   https://www.dicoding.com
 
-[3]   https://www.dicoding.com
+[3]   https://www.datacamp.com
 
-[4]   https://www.datacamp.com
+[4]   https://dqlab.id
 
-[5]   https://dqlab.id
+[5]   https://www.muthu.co
 
-[6]   https://www.muthu.co
+[6]   https://stevkarta.medium.com/membicarakan-precision-recall-dan-f1-score-e96d81910354
 
-[7]   https://stevkarta.medium.com/membicarakan-precision-recall-dan-f1-score-e96d81910354
-
-[8]   https://medium.com/@pararawendy19/memahami-metrik-pada-pemodelan-klasifikasi-29cd5b738ee7
+[7]   https://medium.com/@pararawendy19/memahami-metrik-pada-pemodelan-klasifikasi-29cd5b738ee7
