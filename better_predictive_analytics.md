@@ -233,6 +233,8 @@ Dataset ini secara manual dikumpulkan dari observasi. Dataset ini terdiri dari 7
   
   - Alasan Penggunaan : Standarisasi membantu untuk membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma sehingga kemungkinan besar dapat meningkatkan performa model Machine Learning saat latihan maupun validasi.
 
+  Overview data latih setelah standarisasi pada fitur numerik :
+
   <div align="center">
 
   |   |        pH |      Suhu | Rasa | Bau | Kadar Lemak | Kekeruhan |     Warna |
@@ -393,6 +395,8 @@ Selanjutnya akan dilakukan hyperparameter tuning dan training terhadap model - m
 
 - Training model - model dengan bantuan fungsi Pipeline
 
+Overview 10 besar model terbaik dari proses Hyperparameter Tuning :
+
 <div align="center">
 
 |    |                                  param_classifier |                                            params | mean_test_score | rank_test_score |
@@ -446,7 +450,7 @@ Pada tahap evaluasi ini, kita menggunakan fungsi classification_report dan confu
 
   - Cara Kerja : Metrik ini bekerja dengan menghitung jumlah prediksi di setiap label secara tepat kemudian dibagi dengan jumlah total prediksi yang dilakukan.
 
-Berikut model terbaik beserta nilai akurasi pada tahap latihan dan validasi saat proses _Hyperparameter Tuning_ :
+Berikut model terbaik beserta nilai akurasi pada tahap latihan dan validasi saat proses Hyperparameter Tuning :
 ```
 {'classifier': GradientBoostingClassifier(max_depth=5, random_state=123), 'classifier__max_depth': 5, 'classifier__n_estimators': 100}
 1.0
