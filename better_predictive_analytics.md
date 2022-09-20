@@ -211,8 +211,6 @@ Dataset ini secara manual dikumpulkan dari observasi. Dataset ini terdiri dari 7
     
     - Warna : 0.16
 
-**catatan : EDA adalah Exploratory Data Analysis**.
-
 ## Data Preparation
 
 - Pembagian Data Latih & Validasi
@@ -478,6 +476,8 @@ Kesimpulan :
 - Perlu peningkatan jumlah dataset agar dapat meraih nilai korelasi antar fitur dengan fitur target yang lebih tinggi karena nilai korelasi tertinggi antara fitur masukan dengan fitur target hanya mencapai 0.54 saja
 
 - Penggunaan keenam algoritma Machine Learning cukup relevan karena dari hasil hyperparameter tuning, mayoritas model dari keenam algoritma tersebut bersaing cukup ketat untuk mendapat nilai prediksi terbaik
+
+**catatan : EDA adalah Exploratory Data Analysis**.
 
 Referensi :
 
