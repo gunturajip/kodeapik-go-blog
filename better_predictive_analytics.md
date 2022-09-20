@@ -124,6 +124,8 @@ Dataset ini secara manual dikumpulkan dari observasi. Dataset ini terdiri dari 7
     
     </div>
     
+    Terlihat bahwa tidak ada missing values pada dataset.
+    
   - Menangani Outliers
   
     - Penjelasan : Outliers merupakan titik - titik data yang terpaut jauh dari titik data lainnya. Adanya outliers ini membuat berpotensi menyebabkan performa model menjadi overfitting sehingga perlu adanya penanganan khusus terkait outliers ini. Adapun metode yang digunakan untuk mengatasi outliers pada dataset proyek ini ialah IQR (Inter Quartile Range) dimana IQR ini selisih antara persentil ke-75 (kuartil atas) dan persentil ke-25 (kuartil bawah). IQR ini dapat digunakan untuk membersihkan data - data pada dataset yang rentang nilainya kurang atau lebih dari rentang nilai pada IQR sehingga mengurangi overfitting pada model Machine Learning.
