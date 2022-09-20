@@ -14,23 +14,17 @@ Cara untuk mengidentifikasi kualitas susu memerlukan banyak observasi secara kon
 
 - Memudahkan proses identifikasi kualitas susu dengan bantuan hasil prediksi dari model Machine Learning berjenis klasifikasi
 
-- Memudahkan pemahaman alur pengerjaan proyek terkait kepada orang lain
-
 ### Goals
 
 - Membangun satu atau lebih model Machine Learning yang dapat memprediksi kualitas susu dengan baik
-
-- Memastikan dokumentasi kode program untuk membuat Machine Learning terkait dapat dipahami orang lain
 
 ### Solution statements
 
 - Menggunakan algoritma Logistic Regression, K-Nearest Neighbor, Decision Tree, Random Forest, Support Vector Machine, dan Gradient Boosting untuk membuat satu atau lebih model Machine Learning guna memprediksi kualitas susu dengan baik, melakukan improvement pada baseline model dengan hyperparameter tuning, dan menerapkan metrik evaluasi pada model Machine Learning yang telah dibuat untuk mengetahui kualitas model terkait.
 
-- Menyusun langkah - langkah pengerjaan kode program dari awal hingga akhir secara runtut, menggunakan istilah Bahasa Indonesia yang baik dan benar, dan memberikan komentar terkait penjelasan singkat dari setiap baris kode program untuk mempermudah pemahaman orang lain dalam memahami setiap baris kode program terkait.
-
 ## Data Understanding
 
-Dataset ini secara manual dikumpulkan dari observasi. Dataset ini membantu kita untuk membangun model - model Machine Learning guna memprediksi kualitas susu. Dataset ini terdiri dari 7 fitur independen, seperti : pH, Temprature (suhu), Taste (rasa), Odor (bau), Fat (kadar lemak), Turbidity (kekeruhan), dan Color (warna), serta 1 fitur target, yaitu : Grade (kadar kualitas). Dataset telah dilakukan encoding pada fitur kategorik (nilai-nilai pada kolom Taste, Odor, Fat, dan Turbidity) dan tidak ada nilai null pada Dataset. Dataset terdiri dari 1059 baris dan 8 kolom. Berikut link dataset terkait : [milk quality prediction](https://www.kaggle.com/datasets/cpluzshrijayan/milkquality).
+Dataset ini secara manual dikumpulkan dari observasi. Dataset ini terdiri dari 7 fitur independen, seperti : pH, Temprature (suhu), Taste (rasa), Odor (bau), Fat (kadar lemak), Turbidity (kekeruhan), dan Color (warna), serta 1 fitur target, yaitu : Grade (kadar kualitas). Dataset telah dilakukan encoding pada fitur kategorik (nilai-nilai pada kolom Taste, Odor, Fat, dan Turbidity) dan tidak ada nilai null pada Dataset. Dataset terdiri dari 1059 baris dan 8 kolom. Berikut link dataset terkait : [milk quality prediction](https://www.kaggle.com/datasets/cpluzshrijayan/milkquality).
 
 ### Fitur-fitur pada Milk Quality Prediction dataset adalah sebagai berikut :
 
@@ -92,12 +86,28 @@ Dataset ini secara manual dikumpulkan dari observasi. Dataset ini membantu kita 
   - Klasifikasi Fitur Kategorik, Numerik, dan Target
   
     Penjelasan : Proses ini dilakukan dengan mengklasifikasikan nama - nama fitur yang bersifat kategorik seperti : 'Taste', 'Odor', 'Fat', dan 'Turbidity', numerik seperti : 'pH', 'Temprature', dan 'Colour', serta target seperti : 'Grade' untuk kemudian dirubah ke dalam istilah Bahasa Indonesia agar lebih mudah dimengerti.
+    
+    Overview dataset dengan nama kolom yang berbahasa Indonesia :
+    
+    <div align="center">
+    
+    |   |  pH | Suhu | Rasa | Bau | Kadar Lemak | Kekeruhan | Warna | Kadar Kualitas |
+    |--:|----:|-----:|-----:|----:|------------:|----------:|------:|---------------:|
+    | 0 | 6.6 |   35 |    1 |   0 |           1 |         0 |   254 |           high |
+    | 1 | 6.6 |   36 |    0 |   1 |           0 |         1 |   253 |           high |
+    | 2 | 8.5 |   70 |    1 |   1 |           1 |         1 |   246 |            low |
+    | 3 | 9.5 |   34 |    1 |   1 |           0 |         1 |   255 |            low |
+    | 4 | 6.6 |   37 |    0 |   0 |           0 |         0 |   255 |         medium |
+    
+    </div>
 
 - EDA : Menangani Missing Values dan Outliers Pada Dataset
 
   - Menangani Missing Values
   
     - Penjelasan : Missing values merupakan nilai - nilai kosong dalam sebuah fitur, baris, ataupun kolom. Adanya missing values ini membuat lubang serangkaian data dalam suatu fitur dalam dataset sehingga perlu adanya penanganan khusus terkait missing values ini.
+
+    Distribusi nilai null dari setiap fitur pada dataset :
 
     <div align="center">
     
@@ -117,12 +127,33 @@ Dataset ini secara manual dikumpulkan dari observasi. Dataset ini membantu kita 
   - Menangani Outliers
   
     - Penjelasan : Outliers merupakan titik - titik data yang terpaut jauh dari titik data lainnya. Adanya outliers ini membuat berpotensi menyebabkan performa model menjadi overfitting sehingga perlu adanya penanganan khusus terkait outliers ini. Adapun metode yang digunakan untuk mengatasi outliers pada dataset proyek ini ialah IQR (Inter Quartile Range) dimana IQR ini selisih antara persentil ke-75 (kuartil atas) dan persentil ke-25 (kuartil bawah). IQR ini dapat digunakan untuk membersihkan data - data pada dataset yang rentang nilainya kurang atau lebih dari rentang nilai pada IQR sehingga mengurangi overfitting pada model Machine Learning.
+
+    Distribusi outliers pada fitur numerik dataset :
+    
+    ![1](https://user-images.githubusercontent.com/40670734/191147504-e97d7a72-3de3-4c17-83ba-3037a8623292.png)
+    
+    Adapun formula matematis dari IQR untuk membersihkan data outliers diatas :
+    
+    ```
+    Q1 = data.quantile(0.25)
+
+    Q3 = data.quantile(0.75)
+
+    IQR = Q3-Q1
+    ```
     
     Bentuk dataset setelah pembersihan outliers : (648, 8)
     
 - EDA : Univariate Analysis (Analisis Terhadap 1 Fitur Dataset Dalam 1 Gambar Visualisasi Data)
 
   - Fitur Kategorik
+
+    Distrbusi data pada fitur kategorik dataset :
+
+    ![2](https://user-images.githubusercontent.com/40670734/191147708-fea38a79-2ebb-46f3-b48d-8fc2ca99a604.png)
+    ![3](https://user-images.githubusercontent.com/40670734/191147710-2d797e23-a20f-4b14-83ca-cb525596508c.png)
+    ![4](https://user-images.githubusercontent.com/40670734/191147711-793909b9-ace0-4ce6-9389-da9cce330ec3.png)
+    ![5](https://user-images.githubusercontent.com/40670734/191147712-de7a8e66-34cc-440f-9b31-856d92744850.png)
   
     Terlihat bahwa terdapat 2 jenis data identik pada seluruh fitur kategorik, yaitu 0 (mewakili kualitas buruk, rendah, kecil dari susu) dan 1 (mewakili kualitas baik, tinggi, besar dari susu) dengan rincian :
 
