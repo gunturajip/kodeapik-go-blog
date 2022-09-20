@@ -8,22 +8,18 @@ Proyek ini merupakan proyek untuk memprediksi kualitas susu berdasarkan paramete
 
 Cara untuk mengidentifikasi kualitas susu memerlukan banyak observasi secara konvensional dengan turun langsung ke lapangan untuk mengecek susu tersebut dan mencatat setiap indikator dengan nilai tertentu untuk mengetahui seberapa baik kualitas susu. Dengan adanya Machine Learning dan dataset berisi hasil observasi kualitas susu yang telah dinilai berdasarkan indikator - indikator tertentu, diharapkan dapat memudahkan para pengecek kualitas susu untuk memprediksi kualitas susu hanya dengan memasukkan nilai - nilai sesuai indikator yang ada.
 
-### Referensi
-
-Referensi : [1]
-
 ## Business Understanding
-
-Perlu adanya problem statements untuk menjelaskan pernyataan - pernyataan permasalahan yang dihadapi dalam membangun kode program untuk memprediksi kualitas susu menggunakan Machine Learning, goals untuk menjelaskan tujuan dari adanya permasalahan pada problem statements, dan solution statements untuk menjelaskan secara rinci detail untuk meraih goals.
 
 ### Problem Statements
 
 - Memudahkan proses identifikasi kualitas susu dengan bantuan hasil prediksi dari model Machine Learning berjenis klasifikasi
+
 - Memudahkan pemahaman alur pengerjaan proyek terkait kepada orang lain
 
 ### Goals
 
 - Membangun satu atau lebih model Machine Learning yang dapat memprediksi kualitas susu dengan baik
+
 - Memastikan dokumentasi kode program untuk membuat Machine Learning terkait dapat dipahami orang lain
 
 ### Solution statements
