@@ -1,6 +1,6 @@
 # Laporan Proyek Machine Learning - Guntur Aji Pratama
 
-## Domain Proyek
+## Project Overview
 
 Proyek ini merupakan proyek untuk memprediksi kualitas susu berdasarkan parameter - paremeter tertentu dengan 3 klasifikasi kualitas susu, yaitu : rendah, sedang, dan tinggi.
 
