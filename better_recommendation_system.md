@@ -398,6 +398,111 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
 
     2. Bergantung pada preferensi kategori dari data untuk menjadi label guna memberikan rekomendasi yang sesuai
 
+  Fitur hasil TF-IDF Vectorizer :
+  
+  ```
+  ['amp',
+   'atlantic',
+   'bbcbooks',
+   'collin',
+   'collins',
+   'collinsharvill',
+   'collinspublishers',
+   'collinspubsanfrancisco',
+   'cuisinarts',
+   'fairmountbooksltdremainders',
+   'flamingo',
+   'harper',
+   'harpercollins',
+   'harpercollinscanada',
+   'harpercollinsjuvenilebooks',
+   'harpercollinspublisher',
+   'harpercollinspublishers',
+   'harpercollinspubrs',
+   'harpercollinsuk',
+   'harpercollinswillow',
+   'harperentertainment',
+   'harperflamingocanada',
+   'harperperennial',
+   'indus',
+   'perennialcurrents',
+   'schuster',
+   'simon',
+   'smithmarkpub',
+   'smithmarkpublishing',
+   'totembooks',
+   'trafalgarsquare',
+   'trafalgarsquarebooks',
+   'trafalgarsquarepublishing',
+   'williamcollinssonscoltd']
+  ```
+  
+  Matriks TF-IDF :
+  
+  ```
+  matrix([[0.44943143, 0.        , 0.        , ..., 0.        , 0.        ,
+         0.        ],
+        [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+         0.        ],
+        [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+         0.        ],
+        ...,
+        [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+         0.        ],
+        [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+         0.        ],
+        [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+         0.        ]])
+  ```
+  
+  Overview hubungan judul buku dan penerbit buku dari matriks TF-IDF :
+  
+  ```
+  |                                                      | indus | bbcbooks | collinspubsanfrancisco | atlantic |  collins | harpercollins | harpercollinswillow |  harper | trafalgarsquare | flamingo |
+  |-----------------------------------------------------:|------:|---------:|-----------------------:|---------:|---------:|--------------:|--------------------:|--------:|----------------:|---------:|
+  |                                           judul_buku |       |          |                        |          |          |               |                     |         |                 |          |
+  |                         Bess                         |   0.0 |      0.0 |                    0.0 |      0.0 | 1.000000 |           0.0 |                 0.0 | 0.00000 |             0.0 |      0.0 |
+  |                    Agent In Place                    |   0.0 |      0.0 |                    0.0 |      0.0 | 1.000000 |           0.0 |                 0.0 | 0.00000 |             0.0 |      0.0 |
+  |                The Colours of Her Day                |   0.0 |      0.0 |                    0.0 |      0.0 | 0.330015 |           0.0 |                 0.0 | 0.67493 |             0.0 |      0.0 |
+  | The Dixon Cornbelt League and other baseball stories |   0.0 |      0.0 |                    0.0 |      0.0 | 0.000000 |           1.0 |                 0.0 | 0.00000 |             0.0 |      0.0 |
+  |         British Bats (Collins New Naturalist)        |   0.0 |      0.0 |                    0.0 |      0.0 | 0.000000 |           0.0 |                 0.0 | 0.00000 |             1.0 |      0.0 |
+  |                Sue Crowther's Marriage               |   0.0 |      0.0 |                    0.0 |      0.0 | 0.000000 |           0.0 |                 0.0 | 0.00000 |             0.0 |      0.0 |
+  |             Twopence to Cross the Mersey             |   0.0 |      0.0 |                    0.0 |      0.0 | 0.000000 |           0.0 |                 0.0 | 0.00000 |             0.0 |      0.0 |
+  |         Wedding cakes, rats, and rodeo queens        |   0.0 |      0.0 |                    0.0 |      0.0 | 0.000000 |           1.0 |                 0.0 | 0.00000 |             0.0 |      0.0 |
+  |           The Revenge of Murray the Mantis           |   0.0 |      0.0 |                    0.0 |      0.0 | 0.000000 |           0.0 |                 0.0 | 0.00000 |             0.0 |      0.0 |
+  |                         Hugh                         |   0.0 |      0.0 |                    0.0 |      0.0 | 1.000000 |           0.0 |                 0.0 | 0.00000 |             0.0 |      0.0 |
+  ```
+  
+  Dataframe Cosine Similarity :
+  
+  ```
+  array([[1., 0., 0., ..., 0., 0., 0.],
+       [0., 1., 0., ..., 0., 0., 0.],
+       [0., 0., 1., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 1., 0., 0.],
+       [0., 0., 0., ..., 0., 1., 0.],
+       [0., 0., 0., ..., 0., 0., 1.]])
+  ```
+  
+  Overview hubungan antar judul buku dari dataframe Cosine Similarity :
+  
+  ```
+  |                                                                       judul_buku | The Dixon Cornbelt League and other baseball stories | AMPHIBIANS AND REPTILES | Which Colour? | The Golden Gate | Little Grey Rabbit makes lace (The Little Grey Rabbit library) | STEVE MCQUEEN | The Echoing Grove | The Financial post selects the 100 best companies to work for in Canada | The perfect carrier | The stationary ark |
+  |---------------------------------------------------------------------------------:|-----------------------------------------------------:|------------------------:|--------------:|----------------:|---------------------------------------------------------------:|--------------:|------------------:|------------------------------------------------------------------------:|--------------------:|-------------------:|
+  |                                                                       judul_buku |                                                      |                         |               |                 |                                                                |               |                   |                                                                         |                     |                    |
+  |                                A bridge of magpies                               |                                                  0.0 |                     0.0 |           0.0 |             1.0 |                                                            1.0 |           0.0 |               0.0 |                                                                     1.0 |                 1.0 |                1.0 |
+  |                                Bedside Guardian 29                               |                                                  0.0 |                     0.0 |           0.0 |             0.0 |                                                            0.0 |           0.0 |               0.0 |                                                                     0.0 |                 0.0 |                0.0 |
+  |                              Lord of the Far Island                              |                                                  0.0 |                     0.0 |           0.0 |             1.0 |                                                            1.0 |           0.0 |               0.0 |                                                                     1.0 |                 1.0 |                1.0 |
+  |                                 The Echoing Grove                                |                                                  0.0 |                     0.0 |           1.0 |             0.0 |                                                            0.0 |           1.0 |               1.0 |                                                                     0.0 |                 0.0 |                0.0 |
+  |               Little Grey Rabbit's Christmas (Collins Colour Cubs)               |                                                  0.0 |                     0.0 |           1.0 |             0.0 |                                                            0.0 |           1.0 |               1.0 |                                                                     0.0 |                 0.0 |                0.0 |
+  |                                   Babe Dressing                                  |                                                  0.0 |                     0.0 |           1.0 |             0.0 |                                                            0.0 |           1.0 |               1.0 |                                                                     0.0 |                 0.0 |                0.0 |
+  |                                   STEVE MCQUEEN                                  |                                                  0.0 |                     0.0 |           1.0 |             0.0 |                                                            0.0 |           1.0 |               1.0 |                                                                     0.0 |                 0.0 |                0.0 |
+  |                          Sir Gawain and the Green Knight                         |                                                  0.0 |                     0.0 |           0.0 |             0.0 |                                                            0.0 |           0.0 |               0.0 |                                                                     0.0 |                 0.0 |                0.0 |
+  | The diaries of Lord Louis Mountbatten, 1920-1922: Tours with the Prince of Wales |                                                  0.0 |                     0.0 |           0.0 |             1.0 |                                                            1.0 |           0.0 |               0.0 |                                                                     1.0 |                 1.0 |                1.0 |
+  |                                   A good woman                                   |                                                  0.0 |                     0.0 |           1.0 |             0.0 |                                                            0.0 |           1.0 |               1.0 |                                                                     0.0 |                 0.0 |                0.0 |
+  ```
+
 - Collaborative Filtering
 
   - Penjelasan : Collaborative Filtering merupakan algoritma Machine Learning yang bergantung pada pendapat komunitas pengguna. Ia tidak memerlukan atribut untuk setiap itemnya seperti pada sistem berbasis konten. Collaborative filtering dibagi lagi menjadi dua kategori, yaitu: model based (metode berbasis model machine learning) dan memory based (metode berbasis memori).
