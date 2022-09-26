@@ -162,7 +162,9 @@ Dataset Ratings terdiri dari 1149780 baris dan 3 kolom. 3 kolom yang dimaksud an
     Terlihat bahwa dari 8 kolom yang ada, kolom Book-Title, Year-Of-Publication, Image-URL-S, Image-URL-M, dan	Image-URL-L tidak terlalu mempengaruhi tingkat presisi sistem rekomendasi yang akan dibuat mengingat mereka hanya merupakan informasi pelengkap dari setiap buku. Maka dari itu, kita hanya akan fokus pada kolom ISBN sebagai penanda identitas buku, Book-Author sebagai penanda kategori buku dari sisi penulis, dan Publisher sebagai penanda kategori buku dari sisi penerbit.
     
     Jumlah ISBN unik        : 271360
+    
     Jumlah Book-Author unik : 271360
+    
     Jumlah Publisher unik   : 16808
     
     Ternyata, baik jumlah buku dan penulis unik sama dengan jumlah baris pada data Book yaitu 271360 sehingga asumsi bahwa kolom Book-Author merupakan penanda kategori buku dari sisi penulis merupakan hal yang salah dan tidak berpengaruh terhadap tingkat presisi sistem rekomendasi yang akan dibuat. Adapun jumlah penerbit unik adalah 16808 sehingga kita bisa menggunakan kolom Publisher sebagai salah satu komponen yang akan memberi pengaruh terhadap tingkat presisi sistem rekomendasi yang akan dibuat.
@@ -184,7 +186,9 @@ Dataset Ratings terdiri dari 1149780 baris dan 3 kolom. 3 kolom yang dimaksud an
     Terlihat bahwa dari 3 kolom yang ada, semua kolom berpengaruh terhadap tingkat presisi dari sistem rekomendasi yang akan dibuat, sama seperti kolom - kolom yang ada pada data User dan Book.
     
     Jumlah User-ID unik     : 105283
+    
     Jumlah ISBN unik        : 340556
+    
     Jumlah Book-Rating unik : 11
     
     Terlihat bahwa jumlah pengguna unik yang memberikan rating terhadap buku yaitu 105283 lebih kecil dari jumlah total pengguna unik yaitu 278858. Terlihat juga bahwa jumlah buku unik yang diberikan rating yaitu 340556 lebih besar dari jumlah total buku unik yaitu 271360, sementara untuk jumlah rating unik seperti yang telah diperkirakan. Ini berarti tidak semua pengguna memberikan rating pada buku dan ada beberapa buku tak dikenal yang diberi rating oleh pengguna.
@@ -214,6 +218,7 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
     1. 'left join'
     
        Jumlah User-ID unik : 105283
+       
        Jumlah ISBN unik    : 340556
 
        Jumlah data null di setiap fitur data :
@@ -237,6 +242,7 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
     2. 'right join'
        
        Jumlah User-ID unik : 92107
+       
        Jumlah ISBN unik    : 271360
        
        Jumlah data null di setiap fitur data :
@@ -260,6 +266,7 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
     Terlihat bahwa jika kita menggunakan metode 'left join' menimbulkan banyak data buku yang tidak teridentifikasi. Sedangkan jika menggunakan 'right join' akan menimbulkan banyak data pengguna yang tidak teridentifikasi. Maka dari itu, kita perlu menggunakan metode 'inner join' untuk merging, sama seperti merging sebelumnya.
        
     Jumlah User-ID unik : 92106
+    
     Jumlah ISBN unik    : 270151
     
     ```
