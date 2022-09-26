@@ -14,15 +14,15 @@ Dengan adanya sistem rekomendasi ini, diharapkan dapat membantu mempermudah peng
 
 ### Problem Statements
 
-- Memudahkan pengetahuan terhadap rekomendasi buku sesuai preferensi pengguna maupun rating buku dengan bantuan model Machine Learning
+- Bagaimana cara memudahkan pengetahuan terhadap rekomendasi buku sesuai preferensi pengguna maupun rating buku dengan bantuan model _Machine Learning_?
 
 ### Goals
 
-- Membangun satu atau lebih model Machine Learning yang dapat memberikan pengetahuan berupa rekomendasi buku yang sesuai dan relevan terhadap pengguna
+- Membangun satu atau lebih model _Machine Learning_ yang dapat memberikan pengetahuan berupa rekomendasi buku yang sesuai dan relevan terhadap pengguna
 
 ### Solution statements
 
-- Menggunakan algoritma Content-Based Filtering dan Collaborative Filtering untuk membuat satu atau lebih model Machine Learning guna mendapat rekomendasi buku yang sesuai dan relevan terhadap preferensi pengguna, melatih dan mengevaluasi model menggunakan metrik evaluasi yang relevan untuk mengetahui kualitas model tersebut
+- Menggunakan algoritma _Content-Based Filtering_ dan _Collaborative Filtering_ untuk membuat satu atau lebih model Machine Learning guna mendapat rekomendasi buku yang sesuai dan relevan terhadap preferensi pengguna, melatih dan mengevaluasi model menggunakan metrik evaluasi yang relevan untuk mengetahui kualitas model tersebut
 
 ## Data Understanding
 
@@ -297,6 +297,22 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
 
   - Alasan Penggunaan : Penanganan terhadap Missing Values berguna untuk mengurangi ketidakjelasan konteks dari data yang ada dan membantu meningkatkan kualitas model berbasis data tersebut.
 
+  Terkait fungsi untuk mendeteksi _missing values_ pada studi kasus kali ini dalam bahasa pemrograman Python ialah sebagai berikut :
+  
+  ```
+  data.isnull().sum()
+  ```
+  
+  Terkait fungsi untuk menangani _missing values_ pada studi kasus kali ini dalam bahasa pemrograman Python ialah sebagai berikut :
+  
+  ```
+  # Menambahkan nilai pada fitur nama_kolom yang berisi nilai null
+  data[nama_kolom].fillna(karakter_yang_pengganti_missing_values, inplace=True)
+
+  # Menghapus baris yang fitur nama_koloom berisi nilai null
+  data.dropna(subset=[nama_kolom], inplace=True)
+  ```
+
   Terlihat bahwa missing values terdapat pada kolom Age, Book-Author, Publisher, dan Image-URL-L. Di awal kita telah memahami bahwa kolom Location dan Age tidak berpengaruh terhadap tingkat presisi sistem rekomendasi yang akan dibuat sehingga kita bisa drop 2 kolom tersebut. Kita juga memahami bahwa kolom Book-Title, Book-Author, Year-Of-Publication, Image-URL-S, Image-URL-M	Image-URL-L tidak berpengaruh pada tingkat presisi sistem rekomendasi yang akan dibuat. Namun, kita hanya akan drop 2 kolom, yaitu : kolom Image-URL-M dan Image-URL-L karena sudah kolom Image-URL-M. Untuk missing values pada kolom Book-Author, kita bisa menambahkan string tertentu agar tidak null. Untuk missing values pada kolom Publisher, kita bisa drop baris yang memiliki nilai null mengingat nilai pada kolom ini tidak boleh null dan tidak boleh digantikan dengan nilai lain, terlebih lagi jumlah missing values-nya hanya 2 buah.
   
   Jumlah data null di setiap fitur data :
@@ -314,6 +330,12 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
   ```
   
   Kita juga akan merubah nama fitur dari data menjadi istilah - istilah dalam Bahasa Indonesia agar lebih mudah dimengerti orang Indonesia.
+  
+  Kode program di bahasa pemrograman Python untuk merubah nama fitur dari data ialah sebagai berikut :
+  
+  ```
+  data.rename(columns={nama_kolom_lama:nama_kolom_baru}, inplace=True)
+  ```
 
 - Persiapan Data Untuk Content-Based Filtering
 
@@ -323,7 +345,7 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
 
     - Alasan Penggunaan : Menghapus data duplikat berguna untuk meningkatkan keefektifan kalkulasi data maupun latihan dan evaluasi bagi model Machine Learning. Mengurutkan data berguna untuk meningkatkan akurasi rekomendasi buku karena dataset memiliki beberapa buku dengan data yang sama persis, hanya rating buku tersebut yang berbeda.
 
-    Terkait persiapan data untuk Content-Based Filtering, kita hanya akan menggunakan sebagian data dari data asli. Hal ini dikarenakan keterbatasan hardware untuk melakukan komputasi terhadap pemodelan Machine Learning. Jumlah data yang digunakan adalah seperseribu dari jumlah data asli.
+    Terkait persiapan data untuk Content-Based Filtering, kita hanya akan menggunakan sebagian data dari data asli. Hal ini dikarenakan keterbatasan hardware untuk melakukan komputasi terhadap pemodelan Machine Learning. Jumlah data yang digunakan adalah 1/1000 dari jumlah data asli yaitu 270 data.
 
     Kita telah berhasil menangani missing values. Namun, masih ada satu hal lagi yang perlu dilakukan terkait data tersebut, yaitu menghapus data duplikat. Data duplikat dapat dengan mudah diketahui dari kolom id_buku. Hal ini dikarenakan id_buku merupakan berisi identitas buku dimana satu buku berpotensi memiliki beberapa macam rating yang berbeda dari pengguna yang berbeda - beda. Kita bisa menghapus seluruh data yang sama (terduplikat) dan menyisakan satu data dari setiap data duplikat tersebut.
 
@@ -356,7 +378,7 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
 
     - Alasan Penggunaan : Pembagian Dataset menjadi data latih yang berguna untuk menjadi masukan bagi model Machine Learning saat latihan dan data validasi yang berguna untuk menjadi validator model Machine Learning, dan menghitung metrik evaluasi, serta memudahkan standarisasi pada data latih dan data validasi.
 
-    Terkait persiapan data untuk Collaborative Filtering, kita hanya akan menggunakan sebagian data dari data asli. Hal ini dikarenakan keterbatasan hardware untuk melakukan komputasi terhadap pemodelan Machine Learning. Jumlah data yang digunakna adalah seperseratus dari jumlah data asli.
+    Terkait persiapan data untuk Collaborative Filtering, kita hanya akan menggunakan sebagian data dari data asli. Hal ini dikarenakan keterbatasan hardware untuk melakukan komputasi terhadap pemodelan Machine Learning. Jumlah data yang digunakna adalah 1/100 dari jumlah data asli yaitu 103113 data. Adapun rasio pembagian data latih dan data validasinya ialah 8:2.
 
     Pada Collaborative Filtering, perlu adanya pembagian data menjadi data latih dan data validasi. Hal ini dilakukan supaya tidak terjadi ketidakmampuan model untuk berlatih maupun melakukan validasi, serta mengalami underfitting dan overfitting.
     
@@ -417,6 +439,8 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
   5. Menghitung derajat kesamaan antar judul_buku pada data tersebut
 
   6. Melakukan overview terhadap hasil komputasi fungsi cosine_similarity terhadap data tersebut
+
+  7. Menampilkan rekomendasi buku
 
   Fitur hasil TF-IDF Vectorizer :
   
@@ -521,6 +545,30 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
   |                          Sir Gawain and the Green Knight                         |                                                  0.0 |                     0.0 |           0.0 |             0.0 |                                                            0.0 |           0.0 |               0.0 |                                                                     0.0 |                 0.0 |                0.0 |
   | The diaries of Lord Louis Mountbatten, 1920-1922: Tours with the Prince of Wales |                                                  0.0 |                     0.0 |           0.0 |             1.0 |                                                            1.0 |           0.0 |               0.0 |                                                                     1.0 |                 1.0 |                1.0 |
   |                                   A good woman                                   |                                                  0.0 |                     0.0 |           1.0 |             0.0 |                                                            0.0 |           1.0 |               1.0 |                                                                     0.0 |                 0.0 |                0.0 |
+  
+  Acuan buku :
+
+  <div align="center">
+     
+  |        |    id_buku | rating_buku |    judul_buku | penulis_buku | tahun_publikasi_buku |           penerbit_buku |                                       gambar_buku |
+  |-------:|-----------:|------------:|--------------:|-------------:|---------------------:|------------------------:|--------------------------------------------------:|
+  | 517583 | 0002229544 |           0 | Cold New Dawn | Ian St James |                 1987 | harpercollinspublishers | http://images.amazon.com/images/P/0002229544.0... |
+   
+  </div>
+      
+ Rekomendasi buku :
+      
+ <div align="center">
+      
+ |   |                                        judul_buku |           penerbit_buku |
+ |--:|--------------------------------------------------:|------------------------:|
+ | 0 |                     Hilda Boswell's Blue Treasury | harpercollinspublishers |
+ | 1 |                                The Family Mashber | harpercollinspublishers |
+ | 2 |                 Glue (First Facts - First Skills) | harpercollinspublishers |
+ | 3 |                        The Brambly Hedge Treasury | harpercollinspublishers |
+ | 4 | Little Grey Rabbit's Birthday (Little Grey Rab... | harpercollinspublishers |
+      
+ </div>
 
 - Collaborative Filtering
 
@@ -570,9 +618,11 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
   
   1. Modelling dengan Collaborative Filtering diawali dengan membuat kelas yang akan digunakan menjadi arsitektur model Deep Learning
 
-  2. Memanggil kelas dengan menyertakan parameter - parameter yang relevan untuk membuat sebuah model Deep Learning sistem rekomendasi dan melakukan kompilasi model tersebut dengan memasukkan nilai Optimizer, Loss Function, dan Metric yang relevan
+  2. Memanggil kelas dengan menyertakan parameter - parameter kelas yang terdiri dari jumlah pengguna yang berjumlah 24622 orang dan jumlah buku yang berjumlah 60042 untuk membuat sebuah model Deep Learning sistem rekomendasi dan melakukan kompilasi model tersebut dengan memasukkan nilai Optimizer, Loss Function, dan Metric yang relevan
 
-  3. Melakukan latihan pada model Deep Learning tersebut dengan menyertakan data latih dan data validasi dan beberapa parameter lain untuk dapat melatih model dengan lancar dan aman
+  3. Melakukan latihan pada model Deep Learning tersebut dengan menyertakan data latih dan data validasi dan beberapa parameter lain untuk dapat melatih model dengan lancar dan aman. Adapun parameter lain untuk latihan model Deep Learning terdiri dari batch_size yang bernilai 8 dan epochs yang bernilai 10
+
+  4. Menampilkan rekomendasi buku
 
   Riwayat latihan model berbasis Collaborative Filtering :
   
@@ -598,18 +648,50 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
   Epoch 10/10
   10312/10312 [==============================] - 205s 20ms/step - loss: 0.4234 - root_mean_squared_error: 0.2830 - val_loss: 0.5340 - val_root_mean_squared_error: 0.3530
   ```
+  
+  Rekomendasi buku :
+  
+  ```
+  Rekomendasi Buku Untuk Pengguna 60244
+  ========================================
+  Buku Favorit Pengguna
+  ----------------------------------------
+  A Wrinkle in Time - Laure Leaf
+  Zen and the Art of Motorcycle Maintenance : An Inquiry into Values - Audio Renaissance
+  The Little House - Houghton Mifflin
+  Heckedy Peg - Voyager Books
+  Ed Emberley's Drawing Book: Make a World - Little, Brown
+  Little Bear's Friend - HarperTrophy
+  The Hours : A Novel - Farrar, Straus and Giroux
+  Everyday Sacred: A Women's Journey Home - HarperSanFrancisco
+  Who Will Run the Frog Hospital? - Warner Books
+  The Shelter of Each Other: Rebuilding Our Families - Putnam Publishing Group
+  ----------------------------------------
+  10 Besar Rekomendasi Buku
+  ----------------------------------------
+  Hard Revolution: A Novel - Little, Brown
+  Second Wind - Putnam Publishing Group
+  The Bridges of Madison County - Warner Books
+  The Fifth Profession - Warner Books
+  Shooting at Loons (Deborah Knott Mysteries (Paperback)) - Warner Books
+  The Third Eye (Laurel Leaf Books) - Laure Leaf
+  The Lovely Bones: A Novel - Little, Brown
+  Short &amp; Tall Tales: Moose County Legends Collected by James Mackintosh Qwilleran - Putnam Publishing Group
+  The Slave Dancer (Laurel-Leaf Historical Fiction) - Laure Leaf
+  Counting Coup: A True Story of Basketball and Honor on the Little Big Horn - Warner Books
+  ```
 
 ## Evaluation
 
-Pada tahap evaluasi ini, kita menggunakan pembandingan rekomendasi dan acuan buku pada evaluasi berbasis Content-Based Filtering dan Collaborative Filtering dengan tambahan metrik evaluasi berupa Root Mean Squared Error. Berikut uraiannya :
+Pada tahap evaluasi ini, kita menggunakan metrik evaluasi berupa Precision dan Root Mean Squared Error. Berikut uraiannya :
 
-- Pembadingan rekomendasi dan acuan buku
+- Precision
 
-  - Penjelasan : Ini merupakan proses sederhana untuk mengetahui hubungan nilai rekomendasi dan acuan buku. Karena pada Content-Based Filtering, kita berfokus pada fitur penerbit_buku, maka kita bisa langsung membandingkan hasil rekomendasi buku apakah memiliki nilai penerbit_buku yang sama dengan buku yang dijadikan sebagai acuan. Semisal acuan buku ialah buku yang berjudul 'Cold New Dawn' dan penerbitnya 'harpercollinspublishers', kita bisa mengetahui kualitas model berbasis Content-Based Filtering yang telah dibuat dengan melihat juga penerbit dari buku - buku yang direkomendasikan. Semakin banyak rekomendasi buku yang penerbitnya 'harpercollinspublishers', semakin tinggi kualitas dari model tersebut. Begitu pula dengan model berbasis Collaborative Filtering.
+  - Penjelasan : Persentase jumlah prediksi label yang tepat dengan nilai aktualnya.
 
-  - Formula : Jumlah nilai penerbit_buku pada rekomendasi buku yang sama dengan nilai penerbit_buku pada acuan buku / Jumlah rekomendasi buku
+  - Formula : TP / (TP + FP)
 
-  - Cara Kerja : Metrik ini bekerja dengan menghitung jumlah nilai penerbit_buku pada rekomendasi buku yang sama dengan nilai penerbit_buku pada acuan buku. Untuk setiap rekomendasi buku, diteliti apakah nilai penerbit_buku di dalam rekomendasi buku tersebut sudah sama dengan nilai penerbit_buku pada acuan buku. Jika sama diberi nilai 1 dan jika tidak diberi nilai 0. Nilai - nilai tersebut kemudian dijumlahkan dan dibagi dengan jumlah rekomendasi buku yang diberikan.
+  - Cara Kerja : Metrik ini bekerja dengan menghitung banyaknya jumlah prediksi yang sesuai dengan nilai aktualnya pada dataset. Presisi di setiap label didefinisikan sebagai rasio dari nilai True Positive dengan jumlah total True Positive & False Positive.
 
 - Root Mean Squared Error
 
@@ -621,67 +703,19 @@ Pada tahap evaluasi ini, kita menggunakan pembandingan rekomendasi dan acuan buk
 
 Evaluation model berbasis Content-Based Filtering :
 
-1. Acuan buku :
+1. Presisi rekomendasi buku :
 
-   <div align="center">
-     
-   |        |    id_buku | rating_buku |    judul_buku | penulis_buku | tahun_publikasi_buku |           penerbit_buku |                                       gambar_buku |
-   |-------:|-----------:|------------:|--------------:|-------------:|---------------------:|------------------------:|--------------------------------------------------:|
-   | 517583 | 0002229544 |           0 | Cold New Dawn | Ian St James |                 1987 | harpercollinspublishers | http://images.amazon.com/images/P/0002229544.0... |
    
-   </div>
-      
-2. Rekomendasi buku :
-      
-   <div align="center">
-      
-   |   |                                        judul_buku |           penerbit_buku |
-   |--:|--------------------------------------------------:|------------------------:|
-   | 0 |                     Hilda Boswell's Blue Treasury | harpercollinspublishers |
-   | 1 |                                The Family Mashber | harpercollinspublishers |
-   | 2 |                 Glue (First Facts - First Skills) | harpercollinspublishers |
-   | 3 |                        The Brambly Hedge Treasury | harpercollinspublishers |
-   | 4 | Little Grey Rabbit's Birthday (Little Grey Rab... | harpercollinspublishers |
-      
-   </div>
      
 Evaluation model berbasis Collaborative Filtering :
+
+1. Presisi rekomendasi buku :
+
+
    
-1. Visualisasi riwayat latihan model :
+2.Visualisasi riwayat latihan model :
       
    ![1](https://user-images.githubusercontent.com/40670734/192267863-21a5621f-bb78-4bf9-8388-102508fe74ad.jpg)
-      
-2. Rekomendasi buku :
-   
-   ```
-   Rekomendasi Buku Untuk Pengguna 60244
-   ========================================
-   Buku Favorit Pengguna
-   ----------------------------------------
-   A Wrinkle in Time - Laure Leaf
-   Zen and the Art of Motorcycle Maintenance : An Inquiry into Values - Audio Renaissance
-   The Little House - Houghton Mifflin
-   Heckedy Peg - Voyager Books
-   Ed Emberley's Drawing Book: Make a World - Little, Brown
-   Little Bear's Friend - HarperTrophy
-   The Hours : A Novel - Farrar, Straus and Giroux
-   Everyday Sacred: A Women's Journey Home - HarperSanFrancisco
-   Who Will Run the Frog Hospital? - Warner Books
-   The Shelter of Each Other: Rebuilding Our Families - Putnam Publishing Group
-   ----------------------------------------
-   10 Besar Rekomendasi Buku
-   ----------------------------------------
-   Hard Revolution: A Novel - Little, Brown
-   Second Wind - Putnam Publishing Group
-   The Bridges of Madison County - Warner Books
-   The Fifth Profession - Warner Books
-   Shooting at Loons (Deborah Knott Mysteries (Paperback)) - Warner Books
-   The Third Eye (Laurel Leaf Books) - Laure Leaf
-   The Lovely Bones: A Novel - Little, Brown
-   Short &amp; Tall Tales: Moose County Legends Collected by James Mackintosh Qwilleran - Putnam Publishing Group
-   The Slave Dancer (Laurel-Leaf Historical Fiction) - Laure Leaf
-   Counting Coup: A True Story of Basketball and Honor on the Little Big Horn - Warner Books
-   ```
 
 Kesimpulan :
 
