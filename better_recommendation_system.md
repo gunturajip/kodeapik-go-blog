@@ -457,7 +457,7 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
   
   Overview hubungan judul buku dan penerbit buku dari matriks TF-IDF :
   
-  ```
+
   |                                                      | indus | bbcbooks | collinspubsanfrancisco | atlantic |  collins | harpercollins | harpercollinswillow |  harper | trafalgarsquare | flamingo |
   |-----------------------------------------------------:|------:|---------:|-----------------------:|---------:|---------:|--------------:|--------------------:|--------:|----------------:|---------:|
   |                                           judul_buku |       |          |                        |          |          |               |                     |         |                 |          |
@@ -471,7 +471,7 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
   |         Wedding cakes, rats, and rodeo queens        |   0.0 |      0.0 |                    0.0 |      0.0 | 0.000000 |           1.0 |                 0.0 | 0.00000 |             0.0 |      0.0 |
   |           The Revenge of Murray the Mantis           |   0.0 |      0.0 |                    0.0 |      0.0 | 0.000000 |           0.0 |                 0.0 | 0.00000 |             0.0 |      0.0 |
   |                         Hugh                         |   0.0 |      0.0 |                    0.0 |      0.0 | 1.000000 |           0.0 |                 0.0 | 0.00000 |             0.0 |      0.0 |
-  ```
+
   
   Dataframe Cosine Similarity :
   
@@ -487,7 +487,7 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
   
   Overview hubungan antar judul buku dari dataframe Cosine Similarity :
   
-  ```
+
   |                                                                       judul_buku | The Dixon Cornbelt League and other baseball stories | AMPHIBIANS AND REPTILES | Which Colour? | The Golden Gate | Little Grey Rabbit makes lace (The Little Grey Rabbit library) | STEVE MCQUEEN | The Echoing Grove | The Financial post selects the 100 best companies to work for in Canada | The perfect carrier | The stationary ark |
   |---------------------------------------------------------------------------------:|-----------------------------------------------------:|------------------------:|--------------:|----------------:|---------------------------------------------------------------:|--------------:|------------------:|------------------------------------------------------------------------:|--------------------:|-------------------:|
   |                                                                       judul_buku |                                                      |                         |               |                 |                                                                |               |                   |                                                                         |                     |                    |
@@ -501,7 +501,6 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
   |                          Sir Gawain and the Green Knight                         |                                                  0.0 |                     0.0 |           0.0 |             0.0 |                                                            0.0 |           0.0 |               0.0 |                                                                     0.0 |                 0.0 |                0.0 |
   | The diaries of Lord Louis Mountbatten, 1920-1922: Tours with the Prince of Wales |                                                  0.0 |                     0.0 |           0.0 |             1.0 |                                                            1.0 |           0.0 |               0.0 |                                                                     1.0 |                 1.0 |                1.0 |
   |                                   A good woman                                   |                                                  0.0 |                     0.0 |           1.0 |             0.0 |                                                            0.0 |           1.0 |               1.0 |                                                                     0.0 |                 0.0 |                0.0 |
-  ```
 
 - Collaborative Filtering
 
