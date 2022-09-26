@@ -78,8 +78,7 @@ Dataset Ratings terdiri dari 1149780 baris dan 3 kolom. 3 kolom yang dimaksud an
   
   Informasi Data User :
   
-  <div align="center">
-  
+  ```
    #   Column    Non-Null Count   Dtype  
   ---  ------    --------------   -----  
    0   User-ID   278858 non-null  int64  
@@ -87,8 +86,7 @@ Dataset Ratings terdiri dari 1149780 baris dan 3 kolom. 3 kolom yang dimaksud an
    2   Age       168096 non-null  float64
   dtypes: float64(1), int64(1), object(1)
   memory usage: 6.4+ MB
-  
-  </div>
+  ```
 
 - EDA : Univariate Analysis (Analisis Terhadap 1 Fitur Dataset Dalam 1 Gambar Visualisasi Data)
 
