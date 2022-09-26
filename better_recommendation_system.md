@@ -73,7 +73,9 @@ Dataset Ratings terdiri dari 1149780 baris dan 3 kolom. 3 kolom yang dimaksud an
 - EDA : Deskripsi Data
 
   Bentuk Data User   : (278858, 3)
+  
   Bentuk Data Book   : (271360, 8)
+  
   Bentuk Data Rating : (1149780, 3)
   
   Informasi Data User :
