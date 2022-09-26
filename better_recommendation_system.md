@@ -628,57 +628,57 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
   
   ```
   Epoch 1/10
-  10312/10312 [==============================] - 197s 19ms/step - loss: 0.6447 - root_mean_squared_error: 0.4140 - val_loss: 0.6048 - val_root_mean_squared_error: 0.3908
+  10312/10312 [==============================] - 72s 7ms/step - loss: 0.6451 - root_mean_squared_error: 0.4140 - val_loss: 0.6049 - val_root_mean_squared_error: 0.3917
   Epoch 2/10
-  10312/10312 [==============================] - 194s 19ms/step - loss: 0.5468 - root_mean_squared_error: 0.3569 - val_loss: 0.5671 - val_root_mean_squared_error: 0.3697
+  10312/10312 [==============================] - 58s 6ms/step - loss: 0.5476 - root_mean_squared_error: 0.3571 - val_loss: 0.5670 - val_root_mean_squared_error: 0.3707
   Epoch 3/10
-  10312/10312 [==============================] - 194s 19ms/step - loss: 0.5152 - root_mean_squared_error: 0.3398 - val_loss: 0.5532 - val_root_mean_squared_error: 0.3629
+  10312/10312 [==============================] - 62s 6ms/step - loss: 0.5157 - root_mean_squared_error: 0.3399 - val_loss: 0.5533 - val_root_mean_squared_error: 0.3639
   Epoch 4/10
-  10312/10312 [==============================] - 193s 19ms/step - loss: 0.4937 - root_mean_squared_error: 0.3271 - val_loss: 0.5441 - val_root_mean_squared_error: 0.3585
+  10312/10312 [==============================] - 62s 6ms/step - loss: 0.4948 - root_mean_squared_error: 0.3275 - val_loss: 0.5442 - val_root_mean_squared_error: 0.3595
   Epoch 5/10
-  10312/10312 [==============================] - 194s 19ms/step - loss: 0.4771 - root_mean_squared_error: 0.3170 - val_loss: 0.5384 - val_root_mean_squared_error: 0.3557
+  10312/10312 [==============================] - 61s 6ms/step - loss: 0.4781 - root_mean_squared_error: 0.3174 - val_loss: 0.5381 - val_root_mean_squared_error: 0.3566
   Epoch 6/10
-  10312/10312 [==============================] - 195s 19ms/step - loss: 0.4630 - root_mean_squared_error: 0.3083 - val_loss: 0.5357 - val_root_mean_squared_error: 0.3545
+  10312/10312 [==============================] - 57s 5ms/step - loss: 0.4636 - root_mean_squared_error: 0.3084 - val_loss: 0.5349 - val_root_mean_squared_error: 0.3552
   Epoch 7/10
-  10312/10312 [==============================] - 195s 19ms/step - loss: 0.4512 - root_mean_squared_error: 0.3010 - val_loss: 0.5338 - val_root_mean_squared_error: 0.3535
+  10312/10312 [==============================] - 65s 6ms/step - loss: 0.4521 - root_mean_squared_error: 0.3011 - val_loss: 0.5333 - val_root_mean_squared_error: 0.3544
   Epoch 8/10
-  10312/10312 [==============================] - 200s 19ms/step - loss: 0.4404 - root_mean_squared_error: 0.2940 - val_loss: 0.5332 - val_root_mean_squared_error: 0.3531
+  10312/10312 [==============================] - 57s 6ms/step - loss: 0.4423 - root_mean_squared_error: 0.2948 - val_loss: 0.5318 - val_root_mean_squared_error: 0.3536
   Epoch 9/10
-  10312/10312 [==============================] - 198s 19ms/step - loss: 0.4314 - root_mean_squared_error: 0.2882 - val_loss: 0.5334 - val_root_mean_squared_error: 0.3529
+  10312/10312 [==============================] - 61s 6ms/step - loss: 0.4323 - root_mean_squared_error: 0.2884 - val_loss: 0.5317 - val_root_mean_squared_error: 0.3535
   Epoch 10/10
-  10312/10312 [==============================] - 205s 20ms/step - loss: 0.4234 - root_mean_squared_error: 0.2830 - val_loss: 0.5340 - val_root_mean_squared_error: 0.3530
+  10312/10312 [==============================] - 61s 6ms/step - loss: 0.4235 - root_mean_squared_error: 0.2826 - val_loss: 0.5319 - val_root_mean_squared_error: 0.3534
   ```
   
   Rekomendasi buku :
   
   ```
-  Rekomendasi Buku Untuk Pengguna 60244
+  Rekomendasi Buku Untuk Pengguna 185233
   ========================================
   Buku Favorit Pengguna
   ----------------------------------------
-  A Wrinkle in Time - Laure Leaf
-  Zen and the Art of Motorcycle Maintenance : An Inquiry into Values - Audio Renaissance
-  The Little House - Houghton Mifflin
-  Heckedy Peg - Voyager Books
-  Ed Emberley's Drawing Book: Make a World - Little, Brown
-  Little Bear's Friend - HarperTrophy
-  The Hours : A Novel - Farrar, Straus and Giroux
-  Everyday Sacred: A Women's Journey Home - HarperSanFrancisco
-  Who Will Run the Frog Hospital? - Warner Books
-  The Shelter of Each Other: Rebuilding Our Families - Putnam Publishing Group
+  Silence of the Lambs - St. Martin's Press
+  The three bears (A Read along with me book) - Checkerboard Press
+  Girlfriend in a Coma - ReganBooks
+  Eyes of a Child - Ballantine Books
+  The Magic School Bus: Inside a Beehive (Magic School Bus) - Scholastic
+  Dinosaurs : A Sticker Book - Little Simon
+  Genealogy: How to Find Your Roots (An Impact Book) - Scholastic Library Pub
+  The Running Man - Signet Book
+  Thomas and the School Trip (Step-Into-Reading, Step 2) - Random House Books for Young Readers
+  101 Dalmatians : Escape from De Vil Mansion - Disney Press
   ----------------------------------------
   10 Besar Rekomendasi Buku
   ----------------------------------------
-  Hard Revolution: A Novel - Little, Brown
-  Second Wind - Putnam Publishing Group
-  The Bridges of Madison County - Warner Books
-  The Fifth Profession - Warner Books
-  Shooting at Loons (Deborah Knott Mysteries (Paperback)) - Warner Books
-  The Third Eye (Laurel Leaf Books) - Laure Leaf
-  The Lovely Bones: A Novel - Little, Brown
-  Short &amp; Tall Tales: Moose County Legends Collected by James Mackintosh Qwilleran - Putnam Publishing Group
-  The Slave Dancer (Laurel-Leaf Historical Fiction) - Laure Leaf
-  Counting Coup: A True Story of Basketball and Honor on the Little Big Horn - Warner Books
+  To the Nines: A Stephanie Plum Novel - St. Martin's Press
+  The Tale of the Body Thief (Vampire Chronicles (Paperback)) - Ballantine Books
+  Stud - Signet Book
+  The Stand: Complete and Uncut - Signet Book
+  Harry Potter and the Order of the Phoenix (Book 5) - Scholastic
+  A Caress of Twilight (Meredith Gentry Novels (Hardcover)) - Ballantine Books
+  Blue Highways a Journey Into America - Ballantine Books
+  The Black Echo (Detective Harry Bosch Mysteries) - St. Martin's Press
+  Women in His Life - Ballantine Books
+  My Russian (Ballantine Reader's Circle) - Ballantine Books
   ```
 
 ## Evaluation
