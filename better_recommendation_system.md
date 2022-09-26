@@ -642,6 +642,7 @@ Evaluation model berbasis Collaborative Filtering :
       
 2. Rekomendasi buku :
    
+   ```
    Rekomendasi Buku Untuk Pengguna 60244
    ========================================
    Buku Favorit Pengguna
@@ -669,6 +670,7 @@ Evaluation model berbasis Collaborative Filtering :
    Short &amp; Tall Tales: Moose County Legends Collected by James Mackintosh Qwilleran - Putnam Publishing Group
    The Slave Dancer (Laurel-Leaf Historical Fiction) - Laure Leaf
    Counting Coup: A True Story of Basketball and Honor on the Little Big Horn - Warner Books
+   ```
 
 Kesimpulan :
 
