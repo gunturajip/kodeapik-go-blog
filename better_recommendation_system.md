@@ -398,7 +398,7 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
 
     2. Bergantung pada preferensi kategori dari data untuk menjadi label guna memberikan rekomendasi yang sesuai
 
-  Tahapan pemodelan berbasis Content-Based Filtering untuk sistem rekomendasi :
+  Tahapan pemodelan berbasis Content-Based Filtering :
   
   1. Modelling dengan Content-Based Filtering diawali dengan menampilkan nilai pada penerbit_buku
 
