@@ -87,14 +87,107 @@ Dataset Ratings terdiri dari 1149780 baris dan 3 kolom. 3 kolom yang dimaksud an
   dtypes: float64(1), int64(1), object(1)
   memory usage: 6.4+ MB
   ```
+  
+  Terlihat bahwa data User terdiri dari 278858 baris dan 3 kolom. 3 kolom yang dimaksud antara lain : User-ID (identitas pengguna), Location (lokasi pengguna), dan Age (umur pengguna).
+  
+  Informasi Data Book :
+  
+  ```
+   #   Column               Non-Null Count   Dtype 
+  ---  ------               --------------   ----- 
+   0   ISBN                 271360 non-null  object
+   1   Book-Title           271360 non-null  object
+   2   Book-Author          271359 non-null  object
+   3   Year-Of-Publication  271360 non-null  object
+   4   Publisher            271358 non-null  object
+   5   Image-URL-S          271360 non-null  object
+   6   Image-URL-M          271360 non-null  object
+   7   Image-URL-L          271357 non-null  object
+  dtypes: object(8)
+  memory usage: 16.6+ MB
+  ```
+  
+  Terlihat bahwa data Book terdiri dari 271360 baris dan 8 kolom. 8 kolom yang dimaksud antara lain : ISBN (identitas buku),	Book-Title (judul buku), Book-Author (penulis buku), Year-Of-Publication (tahun publikasi buku),	Publisher	(penerbit buku), Image-URL-S (url foto buku ukuran kecil),	Image-URL-M (url foto buku ukuran sedang), dan Image-URL-L (url foto buku ukuran besar).
+  
+  Informasi Data Rating :
+  
+  ```
+   #   Column       Non-Null Count    Dtype 
+  ---  ------       --------------    ----- 
+   0   User-ID      1149780 non-null  int64 
+   1   ISBN         1149780 non-null  object
+   2   Book-Rating  1149780 non-null  int64 
+  dtypes: int64(2), object(1)
+  memory usage: 26.3+ MB
+  ```
+  
+  Terlihat bahwa data Rating terdiri dari 1149780 baris dan 3 kolom. 3 kolom yang dimaksud antara lain : User-ID (identitas pengguna), ISBN (identitas buku), Book-Rating (rating buku).
 
 - EDA : Univariate Analysis (Analisis Terhadap 1 Fitur Dataset Dalam 1 Gambar Visualisasi Data)
 
   - Data User
 
+    <div align="center">
+  
+    |   | User-ID |                           Location |  Age |
+    |--:|--------:|-----------------------------------:|-----:|
+    | 0 |       1 |                 nyc, new york, usa |  NaN |
+    | 1 |       2 |          stockton, california, usa | 18.0 |
+    | 2 |       3 |    moscow, yukon territory, russia |  NaN |
+    | 3 |       4 |          porto, v.n.gaia, portugal | 17.0 |
+    | 4 |       5 | farnborough, hants, united kingdom |  NaN |
+  
+    </div>
+    
+    Terlihat bahwa dari 3 kolom yang ada, kolom Location dan Age tidak terlalu mempengaruhi tingkat presisi sistem rekomendasi yang akan dibuat mengingat mereka hanya merupakan distribusi demografi dari setiap pengguna. Maka dari itu, kita hanya akan fokus pada kolom User-ID.
+    
+    Jumlah User-ID unik : 278858
+    
+    Terlihat bahwa jumlah pengguna unik sama dengan jumlah baris pada data User yaitu 278858 sehingga dapat dipastikan tidak ada duplikat pada data User.
+
   - Data Book
 
+    <div align="center">
+  
+    |   |       ISBN |                                        Book-Title |          Book-Author | Year-Of-Publication |                  Publisher |                                       Image-URL-S |                                       Image-URL-M |                                       Image-URL-L |
+    |--:|-----------:|--------------------------------------------------:|---------------------:|--------------------:|---------------------------:|--------------------------------------------------:|--------------------------------------------------:|--------------------------------------------------:|
+    | 0 | 0195153448 |                               Classical Mythology |   Mark P. O. Morford |                2002 |    Oxford University Press | http://images.amazon.com/images/P/0195153448.0... | http://images.amazon.com/images/P/0195153448.0... | http://images.amazon.com/images/P/0195153448.0... |
+    | 1 | 0002005018 |                                      Clara Callan | Richard Bruce Wright |                2001 |      HarperFlamingo Canada | http://images.amazon.com/images/P/0002005018.0... | http://images.amazon.com/images/P/0002005018.0... | http://images.amazon.com/images/P/0002005018.0... |
+    | 2 | 0060973129 |                              Decision in Normandy |         Carlo D'Este |                1991 |            HarperPerennial | http://images.amazon.com/images/P/0060973129.0... | http://images.amazon.com/images/P/0060973129.0... | http://images.amazon.com/images/P/0060973129.0... |
+    | 3 | 0374157065 | Flu: The Story of the Great Influenza Pandemic... |     Gina Bari Kolata |                1999 |       Farrar Straus Giroux | http://images.amazon.com/images/P/0374157065.0... | http://images.amazon.com/images/P/0374157065.0... | http://images.amazon.com/images/P/0374157065.0... |
+    | 4 | 0393045218 |                            The Mummies of Urumchi |      E. J. W. Barber |                1999 | W. W. Norton &amp; Company | http://images.amazon.com/images/P/0393045218.0... | http://images.amazon.com/images/P/0393045218.0... | http://images.amazon.com/images/P/0393045218.0... |
+  
+    </div>
+    
+    Terlihat bahwa dari 8 kolom yang ada, kolom Book-Title, Year-Of-Publication, Image-URL-S, Image-URL-M, dan	Image-URL-L tidak terlalu mempengaruhi tingkat presisi sistem rekomendasi yang akan dibuat mengingat mereka hanya merupakan informasi pelengkap dari setiap buku. Maka dari itu, kita hanya akan fokus pada kolom ISBN sebagai penanda identitas buku, Book-Author sebagai penanda kategori buku dari sisi penulis, dan Publisher sebagai penanda kategori buku dari sisi penerbit.
+    
+    Jumlah ISBN unik        : 271360
+    Jumlah Book-Author unik : 271360
+    Jumlah Publisher unik   : 16808
+    
+    Ternyata, baik jumlah buku dan penulis unik sama dengan jumlah baris pada data Book yaitu 271360 sehingga asumsi bahwa kolom Book-Author merupakan penanda kategori buku dari sisi penulis merupakan hal yang salah dan tidak berpengaruh terhadap tingkat presisi sistem rekomendasi yang akan dibuat. Adapun jumlah penerbit unik adalah 16808 sehingga kita bisa menggunakan kolom Publisher sebagai salah satu komponen yang akan memberi pengaruh terhadap tingkat presisi sistem rekomendasi yang akan dibuat.
+
   - Data Rating
+
+    <div align="center">
+  
+    |   | User-ID |       ISBN | Book-Rating |
+    |--:|--------:|-----------:|------------:|
+    | 0 |  276725 | 034545104X |           0 |
+    | 1 |  276726 | 0155061224 |           5 |
+    | 2 |  276727 | 0446520802 |           0 |
+    | 3 |  276729 | 052165615X |           3 |
+    | 4 |  276729 | 0521795028 |           6 |
+  
+    </div>
+    
+    Terlihat bahwa dari 3 kolom yang ada, semua kolom berpengaruh terhadap tingkat presisi dari sistem rekomendasi yang akan dibuat, sama seperti kolom - kolom yang ada pada data User dan Book.
+    
+    Jumlah User-ID unik     : 105283
+    Jumlah ISBN unik        : 340556
+    Jumlah Book-Rating unik : 11
+    
+    Terlihat bahwa jumlah pengguna unik yang memberikan rating terhadap buku yaitu 105283 lebih kecil dari jumlah total pengguna unik yaitu 278858. Terlihat juga bahwa jumlah buku unik yang diberikan rating yaitu 340556 lebih besar dari jumlah total buku unik yaitu 271360, sementara untuk jumlah rating unik seperti yang telah diperkirakan. Ini berarti tidak semua pengguna memberikan rating pada buku dan ada beberapa buku tak dikenal yang diberi rating oleh pengguna.
 
 ## Data Preparation
 
@@ -106,11 +199,108 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
 
   - Alasan Penggunaan : Merging berguna untuk menggabungkan dua atau lebih data terpisah menjadi satu data baru sehingga dapat lebih mudah dalam melakukan persiapan data tanpa khawatir ada data yang tidak tersentuh.
 
+  Terkait merging data User, Book, dan Rating terfokus pada data Rating karena data Rating memiliki rating dari pengguna dan buku yang menjadi tujuan utama kita dalam membuat sistem rekomendasi. Merging ini bisa dilakukan dengan 2 tahap :
+  
+  - Merging data User dan Rating
+
+    Merging antara data User dan Rating dengan metode 'inner join' dimana data Rating sebagai data utama. Didapatkan jumlah pengguna unik pada data hasil merging sama dengan jumlah pengguna unik pada data Rating. Kita lanjut merging dengan data Book.
+    
+    Jumlah User-ID unik : 105283
+
+  - Merging data hasil merging sebelumnya dengan data Book
+
+    Merging antara data sebelumnya dengan data Book dengan metode 'left join' dan 'right join' dimana ISBN sebagai penghubung kedua data. Didapatkan hasil seperti ini :
+    
+    1. 'left join'
+    
+       Jumlah User-ID unik : 105283
+       Jumlah ISBN unik    : 340556
+
+       Jumlah data null di setiap fitur data :
+
+       ```
+       User-ID                     0
+       ISBN                        0
+       Book-Rating                 0
+       Location                    0
+       Age                    309492
+       Book-Title             118644
+       Book-Author            118645
+       Year-Of-Publication    118644
+       Publisher              118646
+       Image-URL-S            118644
+       Image-URL-M            118644
+       Image-URL-L            118648
+       dtype: int64
+       ```
+       
+    2. 'right join'
+       
+       Jumlah User-ID unik : 92107
+       Jumlah ISBN unik    : 271360
+       
+       Jumlah data null di setiap fitur data :
+       
+       ```
+       User-ID                  1209
+       ISBN                        0
+       Book-Rating              1209
+       Location                 1209
+       Age                    279044
+       Book-Title                  0
+       Book-Author                 1
+       Year-Of-Publication         0
+       Publisher                   2
+       Image-URL-S                 0
+       Image-URL-M                 0
+       Image-URL-L                 4
+       dtype: int64
+       ```
+       
+    Terlihat bahwa jika kita menggunakan metode 'left join' menimbulkan banyak data buku yang tidak teridentifikasi. Sedangkan jika menggunakan 'right join' akan menimbulkan banyak data pengguna yang tidak teridentifikasi. Maka dari itu, kita perlu menggunakan metode 'inner join' untuk merging, sama seperti merging sebelumnya.
+       
+    Jumlah User-ID unik : 92106
+    Jumlah ISBN unik    : 270151
+    
+    ```
+    User-ID                     0
+    ISBN                        0
+    Book-Rating                 0
+    Location                    0
+    Age                    277835
+    Book-Title                  0
+    Book-Author                 1
+    Year-Of-Publication         0
+    Publisher                   2
+    Image-URL-S                 0
+    Image-URL-M                 0
+    Image-URL-L                 4
+    dtype: int64
+    ```
+    
+    Didapatkan hasil data hasil merging dengan seluruh identitas pengguna dan buku teridentifiksi dan telah terintegrasi dengan nilai rating.
+
 - Menangani Missing Values
 
   - Penjelasan : Missing values merupakan nilai - nilai kosong dalam sebuah fitur, baris, ataupun kolom. Adanya missing values ini membuat lubang serangkaian data dalam suatu fitur dalam dataset sehingga perlu adanya penanganan khusus terkait missing values ini.
 
   - Alasan Penggunaan : Penanganan terhadap Missing Values berguna untuk mengurangi ketidakjelasan konteks dari data yang ada dan membantu meningkatkan kualitas model berbasis data tersebut.
+
+  Terlihat bahwa missing values terdapat pada kolom Age, Book-Author, Publisher, dan Image-URL-L. Di awal kita telah memahami bahwa kolom Location dan Age tidak berpengaruh terhadap tingkat presisi sistem rekomendasi yang akan dibuat sehingga kita bisa drop 2 kolom tersebut. Kita juga memahami bahwa kolom Book-Title, Book-Author, Year-Of-Publication, Image-URL-S, Image-URL-M	Image-URL-L tidak berpengaruh pada tingkat presisi sistem rekomendasi yang akan dibuat. Namun, kita hanya akan drop 2 kolom, yaitu : kolom Image-URL-M dan Image-URL-L karena sudah kolom Image-URL-M. Untuk missing values pada kolom Book-Author, kita bisa menambahkan string tertentu agar tidak null. Untuk missing values pada kolom Publisher, kita bisa drop baris yang memiliki nilai null mengingat nilai pada kolom ini tidak boleh null dan tidak boleh digantikan dengan nilai lain, terlebih lagi jumlah missing values-nya hanya 2 buah.
+  
+  ```
+  User-ID                0
+  ISBN                   0
+  Book-Rating            0
+  Book-Title             0
+  Book-Author            0
+  Year-Of-Publication    0
+  Publisher              0
+  Image-URL-M            0
+  dtype: int64
+  ```
+  
+  Kita juga akan merubah nama fitur dari data menjadi istilah - istilah dalam Bahasa Indonesia agar lebih mudah dimengerti orang Indonesia.
 
 - Persiapan Data Untuk Content-Based Filtering
 
