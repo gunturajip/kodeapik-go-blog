@@ -355,6 +355,7 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
     Pada Collaborative Filtering, perlu adanya pembagian data menjadi data latih dan data validasi. Hal ini dilakukan supaya tidak terjadi ketidakmampuan model untuk berlatih maupun melakukan validasi, serta mengalami underfitting dan overfitting.
     
     Bentuk fitur masukan data latih : (82490, 2)
+    
     Bentuk fitur target data latih  : (82490,)
     
     Dengan ini, data untuk pemodelan Machine berbasis Collaborative Filtering siap digunakan.
