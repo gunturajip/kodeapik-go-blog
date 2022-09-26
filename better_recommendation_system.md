@@ -26,7 +26,7 @@ Dengan adanya sistem rekomendasi ini, diharapkan dapat membantu mempermudah peng
 
 ## Data Understanding
 
-Dataset ini dikumpulkan oleh Cai-Nicolas Ziegler dalam waktu 4 minggu (mulai Agustus - September 2004) dari [Komunitas Book-Crossing](https://www.bookcrossing.com) dengan izin dari Ron Hornbaker (CTO of Humankind Systems). Dataset berisi 278.858 informasi mengenai pengguna yang telah dianonimisasi yang memberikan 1.149.780 rating terhadap 271.379 buku. [Dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
+Dataset ini dikumpulkan oleh Cai-Nicolas Ziegler dalam waktu 4 minggu (mulai Agustus - September 2004) dari [Komunitas Book-Crossing](https://www.bookcrossing.com) dengan izin dari Ron Hornbaker (CTO of Humankind Systems). Dataset berisi 278.858 informasi mengenai pengguna yang telah dianonimisasi yang memberikan 1.149.780 rating terhadap 271.379 buku. Berikut link dataset terkait : [book recommendation dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
 
 Lebih detail, terdapat 3 dataset utama, yaitu : dataset Users, Books, dan Ratings. Kita akan jelaskan fitur dari setiap dataset satu per satu.
 
@@ -71,6 +71,24 @@ Dataset Ratings terdiri dari 1149780 baris dan 3 kolom. 3 kolom yang dimaksud an
 - Memuat Data
 
 - EDA : Deskripsi Data
+
+  Bentuk Data User   : (278858, 3)
+  Bentuk Data Book   : (271360, 8)
+  Bentuk Data Rating : (1149780, 3)
+  
+  Informasi Data User :
+  
+  <div align="center">
+  
+   #   Column    Non-Null Count   Dtype  
+  ---  ------    --------------   -----  
+   0   User-ID   278858 non-null  int64  
+   1   Location  278858 non-null  object 
+   2   Age       168096 non-null  float64
+  dtypes: float64(1), int64(1), object(1)
+  memory usage: 6.4+ MB
+  
+  </div>
 
 - EDA : Univariate Analysis (Analisis Terhadap 1 Fitur Dataset Dalam 1 Gambar Visualisasi Data)
 
