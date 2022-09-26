@@ -556,19 +556,19 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
    
   </div>
       
- Rekomendasi buku :
+  Rekomendasi buku :
       
- <div align="center">
+  <div align="center">
       
- |   |                                        judul_buku |           penerbit_buku |
- |--:|--------------------------------------------------:|------------------------:|
- | 0 |                     Hilda Boswell's Blue Treasury | harpercollinspublishers |
- | 1 |                                The Family Mashber | harpercollinspublishers |
- | 2 |                 Glue (First Facts - First Skills) | harpercollinspublishers |
- | 3 |                        The Brambly Hedge Treasury | harpercollinspublishers |
- | 4 | Little Grey Rabbit's Birthday (Little Grey Rab... | harpercollinspublishers |
+  |   |                                        judul_buku |           penerbit_buku |
+  |--:|--------------------------------------------------:|------------------------:|
+  | 0 |                     Hilda Boswell's Blue Treasury | harpercollinspublishers |
+  | 1 |                                The Family Mashber | harpercollinspublishers |
+  | 2 |                 Glue (First Facts - First Skills) | harpercollinspublishers |
+  | 3 |                        The Brambly Hedge Treasury | harpercollinspublishers |
+  | 4 | Little Grey Rabbit's Birthday (Little Grey Rab... | harpercollinspublishers |
       
- </div>
+  </div>
 
 - Collaborative Filtering
 
