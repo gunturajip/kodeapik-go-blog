@@ -398,6 +398,15 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
 
     2. Bergantung pada preferensi kategori dari data untuk menjadi label guna memberikan rekomendasi yang sesuai
 
+  Tahapan pemodelan berbasis Content-Based Filtering untuk sistem rekomendasi :
+  
+  1. Modelling dengan Content-Based Filtering diawali dengan menampilkan nilai pada penerbit_buku
+  2. Proses selanjutnya ialah melakukan fitting dan transformasi nilai pada penerbit_buku menemukan representasi fitur penting berdasarkan penerbit_buku
+  3. Proses selanjutnya ialah melakukan perubahan bentuk data dari dataframe menjadi matriks
+  4. Melakukan overview terhadap hasil komputasi tfidfvectorizer terhadap data tersebut
+  5. Menghitung derajat kesamaan antar judul_buku pada data tersebut
+  6. Melakukan overview terhadap hasil komputasi fungsi cosine_similarity terhadap data tersebut
+
   Fitur hasil TF-IDF Vectorizer :
   
   ```
