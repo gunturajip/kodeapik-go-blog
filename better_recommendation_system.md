@@ -319,6 +319,29 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
 
     - Alasan Penggunaan : Menghapus data duplikat berguna untuk meningkatkan keefektifan kalkulasi data maupun latihan dan evaluasi bagi model Machine Learning. Mengurutkan data berguna untuk meningkatkan akurasi rekomendasi buku karena dataset memiliki beberapa buku dengan data yang sama persis, hanya rating buku tersebut yang berbeda.
 
+    Terkait persiapan data untuk Content-Based Filtering, kita hanya akan menggunakan sebagian data dari data asli. Hal ini dikarenakan keterbatasan hardware untuk melakukan komputasi terhadap pemodelan Machine Learning. Jumlah data yang digunakan adalah seperseribu dari jumlah data asli.
+
+    Kita telah berhasil menangani missing values. Namun, masih ada satu hal lagi yang perlu dilakukan terkait data tersebut, yaitu menghapus data duplikat. Data duplikat dapat dengan mudah diketahui dari kolom id_buku. Hal ini dikarenakan id_buku merupakan berisi identitas buku dimana satu buku berpotensi memiliki beberapa macam rating yang berbeda dari pengguna yang berbeda - beda. Kita bisa menghapus seluruh data yang sama (terduplikat) dan menyisakan satu data dari setiap data duplikat tersebut.
+
+    Kita juga akan melakukan pengurutan data berdasarkan fitur id_buku yang nilainya berbasis numerik guna meningkatkan akurasi rekomendasi buku sesuai penerbit buku.
+    
+    ```
+    array(['simon&amp;schuster', 'collins', 'harpercollinsuk',
+       'harpercollinspublishers', 'trafalgarsquarepublishing',
+       'trafalgarsquarebooks', 'atlantic', 'fairmountbooksltdremainders',
+       'trafalgarsquare', 'collin', 'williamcollinssonscoltd',
+       'harperflamingocanada', 'harpercollinscanada', 'harpercollins',
+       'harper&amp;collins', 'harpercollinspublisher',
+       'smithmarkpublishing', 'cuisinarts', 'collinsharvill',
+       'collinspubsanfrancisco', 'harpercollinsjuvenilebooks',
+       'smithmarkpub', 'harpercollinswillow', 'bbcbooks', 'totembooks',
+       'flamingo', 'harperperennial', 'harpercollinspubrs',
+       'collinspublishers', 'perennialcurrents', 'harperentertainment',
+       'indus'], dtype=object)
+    ```
+    
+    Dengan ini, data untuk pemodelan Machine berbasis Content-Based Filtering siap digunakan.
+
 - Persiapan Data Untuk Collaborative Filtering
 
   - Pembagian Data Latih & Validasi
@@ -326,6 +349,15 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
     - Penjelasan : Proses membagi dataset menjadi data latih dan data validasi dimana data latih akan digunakan oleh model Machine Learning untuk latihan dan data validasi sebagai validator bagi performa model Machine Learning yang dihitung melalui metrik evaluasi.
 
     - Alasan Penggunaan : Pembagian Dataset menjadi data latih yang berguna untuk menjadi masukan bagi model Machine Learning saat latihan dan data validasi yang berguna untuk menjadi validator model Machine Learning, dan menghitung metrik evaluasi, serta memudahkan standarisasi pada data latih dan data validasi.
+
+    Terkait persiapan data untuk Collaborative Filtering, kita hanya akan menggunakan sebagian data dari data asli. Hal ini dikarenakan keterbatasan hardware untuk melakukan komputasi terhadap pemodelan Machine Learning. Jumlah data yang digunakna adalah seperseratus dari jumlah data asli.
+
+    Pada Collaborative Filtering, perlu adanya pembagian data menjadi data latih dan data validasi. Hal ini dilakukan supaya tidak terjadi ketidakmampuan model untuk berlatih maupun melakukan validasi, serta mengalami underfitting dan overfitting.
+    
+    Bentuk fitur masukan data latih : (82490, 2)
+    Bentuk fitur target data latih  : (82490,)
+    
+    Dengan ini, data untuk pemodelan Machine berbasis Collaborative Filtering siap digunakan.
 
 ## Modelling
 
