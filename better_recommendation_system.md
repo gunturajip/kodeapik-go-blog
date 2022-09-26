@@ -638,7 +638,7 @@ Evaluation model berbasis Collaborative Filtering :
    
 1. Visualisasi riwayat latihan model :
       
-   ![1](https://user-images.githubusercontent.com/40670734/192264817-c8c2f4d3-c6a1-415a-8ea4-81efc218731a.png)
+   ![1](https://user-images.githubusercontent.com/40670734/192267863-21a5621f-bb78-4bf9-8388-102508fe74ad.jpg)
       
 2. Rekomendasi buku :
    
