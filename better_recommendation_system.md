@@ -26,7 +26,7 @@ Dengan adanya sistem rekomendasi ini, diharapkan dapat membantu mempermudah peng
 
 ## Data Understanding
 
-Dataset ini dikumpulkan oleh Cai-Nicolas Ziegler dalam waktu 4 minggu (mulai Agustus - September 2004) dari [Komunitas Book-Crossing](https://www.bookcrossing.com) dengan izin dari Ron Hornbaker (CTO of Humankind Systems). Dataset berisi 278.858 informasi mengenai pengguna yang telah dianonimisasi yang memberikan 1.149.780 rating terhadap 271.379 buku. Berikut link dataset terkait : [book recommendation dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
+Dataset ini dikumpulkan oleh Cai-Nicolas Ziegler dalam waktu 4 minggu (mulai Agustus - September 2004) dari [Komunitas Book-Crossing](https://www.bookcrossing.com) dengan izin dari Ron Hornbaker (CTO of Humankind Systems). Dataset berisi 278.858 informasi mengenai pengguna yang telah dianonimisasi yang memberikan 1.149.780 rating terhadap 271.379 buku. Berikut link dataset terkait : [book recommendation dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset).
 
 Lebih detail, terdapat 3 dataset utama, yaitu : dataset Users, Books, dan Ratings. Kita akan jelaskan fitur dari setiap dataset satu per satu.
 
