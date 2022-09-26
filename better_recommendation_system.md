@@ -703,19 +703,19 @@ Pada tahap evaluasi ini, kita menggunakan metrik evaluasi berupa Precision dan R
 
 Evaluation model berbasis Content-Based Filtering :
 
-1. Presisi rekomendasi buku :
-
-   
+```
+Presisi rekomendasi buku berbasis Content-Based Filtering :  1.0
+```
      
 Evaluation model berbasis Collaborative Filtering :
 
-1. Presisi rekomendasi buku :
-
-
+```
+Presisi rekomendasi buku berbasis Collaborative Filtering :  1.0
+```
    
-2.Visualisasi riwayat latihan model :
+Visualisasi riwayat latihan model :
       
-   ![1](https://user-images.githubusercontent.com/40670734/192267863-21a5621f-bb78-4bf9-8388-102508fe74ad.jpg)
+![1](https://user-images.githubusercontent.com/40670734/192304916-697f0202-c14b-4634-bcb7-22dd86c3b270.jpg)
 
 Kesimpulan :
 
