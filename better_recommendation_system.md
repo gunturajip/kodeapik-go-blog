@@ -271,6 +271,8 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
     
     Jumlah ISBN unik    : 270151
     
+    Jumlah data null di setiap fitur data :
+    
     ```
     User-ID                     0
     ISBN                        0
