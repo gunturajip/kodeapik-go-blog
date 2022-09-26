@@ -329,6 +329,8 @@ Secara umum, pada tahap ini akan dilakukan terhadap 2 data untuk tahap Modelling
 
     Kita juga akan melakukan pengurutan data berdasarkan fitur id_buku yang nilainya berbasis numerik guna meningkatkan akurasi rekomendasi buku sesuai penerbit buku.
     
+    Data penerbit buku unik untuk model Content-Based Filtering :
+    
     ```
     array(['simon&amp;schuster', 'collins', 'harpercollinsuk',
        'harpercollinspublishers', 'trafalgarsquarepublishing',
