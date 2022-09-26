@@ -401,10 +401,15 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
   Tahapan pemodelan berbasis Content-Based Filtering untuk sistem rekomendasi :
   
   1. Modelling dengan Content-Based Filtering diawali dengan menampilkan nilai pada penerbit_buku
+
   2. Proses selanjutnya ialah melakukan fitting dan transformasi nilai pada penerbit_buku menemukan representasi fitur penting berdasarkan penerbit_buku
+
   3. Proses selanjutnya ialah melakukan perubahan bentuk data dari dataframe menjadi matriks
+
   4. Melakukan overview terhadap hasil komputasi tfidfvectorizer terhadap data tersebut
+
   5. Menghitung derajat kesamaan antar judul_buku pada data tersebut
+
   6. Melakukan overview terhadap hasil komputasi fungsi cosine_similarity terhadap data tersebut
 
   Fitur hasil TF-IDF Vectorizer :
@@ -535,7 +540,7 @@ Pada tahap modelling ini, kita akan menggunakan dua macam algoritma yang berbeda
 
        - Alasan Penggunaan : RecommenderNet berguna untuk membangun model Deep Learning terkait masalah sistem rekomendasi yang sudah terbukti memiliki akurasi dan kestabilan prediksi rekomendasi yang tinggi.
 
-      - Optimizer, Loss, dan Metrik : Pada pemodelan berbasis RecommenderNet, Optimizer yang digunakan ialah 'adam' karena Optimizer tersebut merupakan salah satu yang terbaik dan bisa beradaptasi dengan hampir semua studi kasus Deep Learning. Loss Function yang digunakan ialah 'binary_crossentropy' karena Loss Function tersebut sejalan dengan output dari model RecommenderNet yang mengklasifikasikan suatu buku untuk direkomendasikan pada skala 0 hingga 1 dengan 0 berarti tidak direkomendasikan dan 1 berarti direkomendasikan. Loss yang digunakan ialah 'adam'. Metrik yang digunakan ialah 'root_mean_squared_error' karena dapat mengukur tingkat error pada proses latihan model dimana semakin mendekati angka 1 atau lebih menandakan tingkat error semakin tinggi dan mendekati angka 0 menandakan tingkat error semakin rendah dan model dapat berlatih.
+       - Optimizer, Loss, dan Metrik : Pada pemodelan berbasis RecommenderNet, Optimizer yang digunakan ialah 'adam' karena Optimizer tersebut merupakan salah satu yang terbaik dan bisa beradaptasi dengan hampir semua studi kasus Deep Learning. Loss Function yang digunakan ialah 'binary_crossentropy' karena Loss Function tersebut sejalan dengan output dari model RecommenderNet yang mengklasifikasikan suatu buku untuk direkomendasikan pada skala 0 hingga 1 dengan 0 berarti tidak direkomendasikan dan 1 berarti direkomendasikan. Loss yang digunakan ialah 'adam'. Metrik yang digunakan ialah 'root_mean_squared_error' karena dapat mengukur tingkat error pada proses latihan model dimana semakin mendekati angka 1 atau lebih menandakan tingkat error semakin tinggi dan mendekati angka 0 menandakan tingkat error semakin rendah dan model dapat berlatih.
 
   - Kelebihan :
 
